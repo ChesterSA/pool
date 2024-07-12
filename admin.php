@@ -1,3 +1,7 @@
+<head>
+    <title>Admin Panel </title>
+</head>
+<body>
 <h1>Admin Panel</h1>
 
 <a href="index.php">Back to home</a>
@@ -30,8 +34,9 @@
 
     <label>
         Date
-        <input type="date" name="date">
+        <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>">
     </label>
 
     <input type="submit">
 </form>
+</body>

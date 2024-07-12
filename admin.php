@@ -1,7 +1,8 @@
 <h1>Admin Panel</h1>
 
+<a href="index.php">Back to home</a>
 
-<form action="/test.php" method="POST">
+<form action="/backend.php" method="POST">
     <h2>Players</h2>
     <?php
     $names = explode("\n", file_get_contents('players.txt'));

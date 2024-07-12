@@ -44,6 +44,8 @@ arsort($winners);
 </head>
 <body>
 <h1>Pool</h1>
+<a href="admin.php">Admin</a>
+
 
 <h2>Players</h2>
 <table>

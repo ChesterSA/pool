@@ -7,7 +7,7 @@ if (! file_exists('players.txt')) {
 
 if (! file_exists('games.csv')) {
     $f = fopen("games.csv", "w");
-    fwrite($f, 'winner,loser,date');
+    fwrite($f, "winner,loser,date\r\n");
     fclose($f);
 }
 

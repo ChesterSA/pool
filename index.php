@@ -1,4 +1,5 @@
 <?php
+
 //Create Files
 if (! file_exists('players.txt')) {
     $f = fopen("players.txt", "w");

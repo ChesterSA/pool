@@ -4,7 +4,7 @@
 <body>
 <h1>Admin Panel</h1>
 
-<a href="index.php">Back to home</a>
+<a href="/index.php">Back to home</a>
 
 <form action="/backend.php" method="POST">
     <h2>Players</h2>
@@ -21,6 +21,7 @@
     </label>
 
     <hr>
+
     <h2>New Game</h2>
     <label>
         Winner
@@ -34,7 +35,8 @@
 
     <label>
         Date
-        <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>">
+        <input type="date" name="date"
+               value="<?php echo date('Y-m-d'); ?>">
     </label>
 
     <input type="submit">

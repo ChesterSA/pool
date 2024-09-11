@@ -96,3 +96,23 @@ function updateEloRatings($matches)
 
     return $ratings;
 }
+
+function save($data) {
+    $root = getFileRoot();
+    if (isset($data['player']) && $player = $data['player']) {
+        $file = fopen($root . "players.txt", "a");
+        fwrite($file, $player . "\r\n");
+        fclose($file);
+    }
+
+    $winner = $data['winner'];
+    $loser = $data['loser'];
+    $date = $data['date'];
+
+    if ($winner && $loser && $date) {
+        $file = fopen($root . "games.csv", "a");
+        $line = "$winner,$loser,$date";
+        fwrite($file, $line . "\r\n");
+        fclose($file);
+    }
+}

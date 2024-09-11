@@ -41,17 +41,20 @@ $winners = array_merge($winners, array_count_values(array_column($games, 'winner
 arsort($winners);
 ?>
 <head>
-    <title>Pool</title>
+    <title>Techquity Pool League</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <style>
+        :root {
+            --accent: #8ECAD2;
+        }
         h3 {
             margin-bottom: 10px
         }
     </style>
 </head>
 <body>
-<h1>Pool</h1>
+<h1>Techquity Pool League<l</h1>
 <a href="admin.php">Admin</a>
 
 <h3>Players</h3>

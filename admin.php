@@ -1,5 +1,6 @@
 <head>
     <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
 </head>
 <body>
 <h1>Admin Panel</h1>

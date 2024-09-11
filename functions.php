@@ -27,9 +27,30 @@ function loadPlayers()
 
 function loadScores($games)
 {
-    $players = updateEloRatings($games);
+    $players = [];
 
-    arsort($players);
+    $elo = updateEloRatings($games);
+
+    foreach($elo as $player => $score) {
+        $players[$player]['elo'] = $score;
+    }
+
+    $winners = array_count_values(array_column($games, 'winner'));
+    foreach($winners as $winner => $wins) {
+        $players[$winner]['wins'] = $wins;
+    }
+
+    $losers = array_count_values(array_column($games, 'loser'));
+    foreach($losers as $loser => $losses) {
+        $players[$loser]['losses'] = $losses;
+    }
+
+    foreach($players as &$player) {
+        if (! isset($player['wins'])) { $player['wins'] = 0; }
+        if (! isset($player['losses'])) { $player['losses'] = 0; }
+    }
+
+    array_multisort(array_column($players, 'elo'), SORT_DESC, $players);
 
     return $players;
 }
@@ -96,13 +117,18 @@ function updateEloRatings($matches)
     return $ratings;
 }
 
-function save($data) {
+function savePlayer($data) {
     $root = getFileRoot();
+
     if (isset($data['player']) && $player = $data['player']) {
         $file = fopen($root . "players.txt", "a");
         fwrite($file, $player . "\r\n");
         fclose($file);
     }
+}
+
+function saveGame($data) {
+    $root = getFileRoot();
 
     $winner = $data['winner'];
     $loser = $data['loser'];

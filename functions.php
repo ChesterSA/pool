@@ -23,7 +23,7 @@ function createFiles()
 function loadPlayers()
 {
     $root = getFileRoot();
-    return array_filter(explode("\n", $root . file_get_contents('players.txt')));
+    return array_filter(explode("\n", file_get_contents($root . 'players.txt')));
 }
 
 function loadScores($games)

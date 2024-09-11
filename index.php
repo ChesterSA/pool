@@ -47,7 +47,6 @@ arsort($winners);
 <h1>Pool</h1>
 <a href="admin.php">Admin</a>
 
-
 <h2>Players</h2>
 <table>
     <tr>
@@ -62,6 +61,7 @@ arsort($winners);
     ?>
 </table>
 
+<h2>Games</h2>
 <table>
     <tr>
         <th>Winner</th>

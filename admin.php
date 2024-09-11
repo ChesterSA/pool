@@ -1,5 +1,5 @@
 <head>
-    <title>Admin Panel </title>
+    <title>Admin Panel</title>
 </head>
 <body>
 <h1>Admin Panel</h1>

@@ -24,7 +24,7 @@ $games = loadGames();
 <div class="container">
 
     <div>
-        <div style="display: flex; justify-content: center;">
+        <div class="center">
 
             <form action="/backend.php" method="POST">
                 <input type="hidden" name="type" value="game">

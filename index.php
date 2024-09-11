@@ -54,7 +54,7 @@ arsort($winners);
     </style>
 </head>
 <body>
-<h1>Techquity Pool League<l</h1>
+<h1>Techquity Pool League</h1>
 <a href="admin.php">Admin</a>
 
 <h3>Players</h3>

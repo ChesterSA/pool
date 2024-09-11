@@ -8,7 +8,7 @@
 <a href="/index.php">Back to home</a>
 
 <form action="/backend.php" method="POST">
-    <h2>Players</h2>
+    <h3>Players</h3>
     <?php
     $names = explode("\n", file_get_contents('players.txt'));
 
@@ -21,9 +21,11 @@
         <input type="text" name="player">
     </label>
 
+    <input type="submit">
+
     <hr>
 
-    <h2>New Game</h2>
+    <h3>New Game</h3>
     <label>
         Winner
         <input type="text" name="winner">

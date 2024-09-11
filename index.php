@@ -25,7 +25,7 @@ $players = loadScores($games);
     <div class="container">
         <div style="display: flex; justify-content: center;">
 
-                <table style="width:100%">
+                <table>
                     <tr>
                         <th>Player</th>
                         <th>Wins</th>
@@ -48,7 +48,7 @@ $players = loadScores($games);
         </div>
             <details>
                 <summary>Games</summary>
-                <table style="width:100%">
+                <table>
                     <tr>
                         <th>Winner</th>
                         <th>Loser</th>

@@ -62,8 +62,7 @@ $games = loadGames();
                         <label for="date">Date</label>
 
                         <input type="date" id="date" name="date"
-                               value="<?php
-                               echo date('Y-m-d'); ?>">
+                               value="<?php echo date('Y-m-d'); ?>">
                     </div>
 
                 </div>
@@ -76,7 +75,7 @@ $games = loadGames();
 
         <details open>
             <summary>Games</summary>
-            <table style="width:100%">
+            <table>
                 <tr>
                     <th>Winner</th>
                     <th>Loser</th>
@@ -96,8 +95,5 @@ $games = loadGames();
         </details>
     </div>
 </div>
-
-
-<!--<div style="height:400px"></div>-->
 
 </body>

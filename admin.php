@@ -1,3 +1,10 @@
+<?php
+
+include('functions.php');
+$players = loadPlayers();
+
+?>
+
 <head>
     <title>Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,12 +25,22 @@
     <h3>New Game</h3>
     <label>
         Winner
-        <input type="text" name="winner">
+        <select name="winner">
+            <option disabled selected>-</option>
+            <?php
+                foreach ($players as $name) { echo "<option>$name</option>"; }
+            ?>
+        </select>
     </label>
 
     <label>
         Loser
-        <input type="text" name="loser">
+        <select name="loser">
+            <option disabled selected>-</option>
+            <?php
+                foreach ($players as $name) { echo "<option>$name</option>";}
+            ?>
+        </select>
     </label>
 
     <label>
@@ -37,9 +54,8 @@
 
     <h3>Players</h3>
     <?php
-    $names = explode("\n", file_get_contents('players.txt'));
 
-    foreach ($names as $name) {
+    foreach ($players as $name) {
         echo "<p>$name</p>";
     }
     ?>

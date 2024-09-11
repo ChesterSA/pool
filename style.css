@@ -5,6 +5,7 @@
 header {
     max-height: 150px;
 }
+
 label {
     text-align: center;
     font-weight: bolder;
@@ -14,8 +15,14 @@ select {
     min-width: 20rem;
 }
 
+
+.container {
+    min-height: 100vh;
+    margin-top: 2rem;
+}
+
 .center {
     display: flex;
     justify-content: center;
-    gap: 1rem
+    gap: 1rem;
 }

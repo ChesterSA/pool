@@ -11,6 +11,7 @@ $players = loadPlayers();
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 <header>
     <h1>Add a Player</h1>
@@ -19,59 +20,30 @@ $players = loadPlayers();
         <a href="/index.php">Back to home</a>
     </nav>
 </header>
-<div style="display: flex; justify-content: center;">
 
-    <form action="/backend.php" method="POST">
-        <input type="hidden" name="type" value="game">
+<div class="container">
+    <div style="display: flex; justify-content: center;">
 
-        <div class="center">
-            <div>
-                <label for="winner">Winner</label>
+        <form action="/backend.php" method="POST">
+            <input type="hidden" name="type" value="player">
 
-                <select id="winner" name="winner">
-                    <option disabled selected>-</option>
-                    <?php
-                    foreach ($players as $name) {
-                        echo "<option>$name</option>";
-                    }
-                    ?>
-                </select>
+            <div class="center">
+                <div>
+                    <label for="player">Player</label>
+
+                    <input type="text" id="player" name="player">
+                </div>
+
             </div>
-            <div>
-                <label for="loser">Loser</label>
-
-                <select id="loser" name="loser" style="min-width: 20rem">
-                    <option disabled selected>-</option>
-                    <?php
-                    foreach ($players as $name) {
-                        echo "<option>$name</option>";
-                    }
-                    ?>
-                </select>
+            <div class="center">
+                <input type="submit">
             </div>
 
-
-        </div>
-        <div class="center">
-            <div>
-                <label for="date">Date</label>
-
-                <input type="date" id="date" name="date" value="<?php
-                echo date('Y-m-d'); ?>">
-            </div>
-
-        </div>
-        <div class="center">
-            <input type="submit">
-        </div>
-
-    </form>
-
-
-</div>
-<div style="display: flex; justify-content: center">
-    <div>
-        <h3>Players</h3>
+        </form>
+        
+    </div>
+    <details open>
+        <summary>Players</summary>
         <ul>
             <?php
             foreach ($players as $player) {
@@ -79,11 +51,8 @@ $players = loadPlayers();
             }
             ?>
         </ul>
-    </div>
-
+    </details>
 </div>
 
-
-<div style="height:50px"></div>
 
 </body>

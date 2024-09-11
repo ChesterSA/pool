@@ -20,48 +20,54 @@ $players = loadScores($games);
         <a href="new-game.php">Add a Game</a>
     </nav>
 </header>
-<h3>Players</h3>
-<table>
-    <tr>
-        <th>Player</th>
-        <th>Wins</th>
-        <th>Losses</th>
-        <th>Score</th>
-    </tr>
 
-    <?php
-    $loop = 1;
+<div class="container">
+    <div class="container">
+        <div style="display: flex; justify-content: center;">
 
-    foreach ($players as $player => $stats) {
-//        U+1F3C6
-        $num = ($loop == 1) ? "&#127942;" : "$loop.";
-        echo "<tr><td>$num $player</td><td>{$stats['wins']}</td><td>{$stats['losses']}</td><td>{$stats['elo']}</td></tr>";
-        $loop++;
-    }
-    ?>
-</table>
+                <table style="width:100%">
+                    <tr>
+                        <th>Player</th>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                        <th>Score</th>
+                    </tr>
 
-<details>
-    <summary>Games</summary>
-    <table style="width:100%">
-        <tr>
-            <th>Winner</th>
-            <th>Loser</th>
-            <th>Date</th>
-        </tr>
+                    <?php
+                    $loop = 1;
 
-        <?php
-        foreach ($games as $game) {
-            echo "<tr>
-                    <td>{$game['winner']}</td>
-                    <td>{$game['loser']}</td>
-                    <td>{$game['date']}</td>
-                  </tr>";
-        }
-        ?>
-    </table>
-</details>
+                    foreach ($players as $player => $stats) {
+                        $key = ($loop == 1) ? "&#127942;" : "$loop.";
+                        echo "<tr><td>$key $player</td><td>{$stats['wins']}</td><td>{$stats['losses']}</td><td>{$stats['elo']}</td></tr>";
+                        $loop++;
+                    }
+                    ?>
+                </table>
 
-<div style="height:400px"></div>
+
+        </div>
+            <details>
+                <summary>Games</summary>
+                <table style="width:100%">
+                    <tr>
+                        <th>Winner</th>
+                        <th>Loser</th>
+                        <th>Date</th>
+                    </tr>
+
+                    <?php
+                    foreach ($games as $game) {
+                        echo "<tr>
+                            <td>{$game['winner']}</td>
+                            <td>{$game['loser']}</td>
+                            <td>{$game['date']}</td>
+                          </tr>";
+                    }
+                    ?>
+                </table>
+            </details>
+    </div>
+
+</div>
 
 </body>

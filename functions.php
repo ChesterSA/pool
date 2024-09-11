@@ -1,14 +1,20 @@
 <?php
 
+function getFileRoot(){
+    var_dump($_SERVER['REMOTE_ADDR']);
+    return $_SERVER['REMOTE_ADDR'] == '127.0.0.1' ? '' : '../';
+}
 function createFiles()
 {
-    if (! file_exists('players.txt')) {
-        $f = fopen("players.txt", "w");
+    $root = getFileRoot();
+
+    if (! file_exists($root . 'players.txt')) {
+        $f = fopen($root . "players.txt", 'w');
         fclose($f);
     }
 
-    if (! file_exists('games.csv')) {
-        $f = fopen("games.csv", "w");
+    if (! file_exists($root . 'games.csv')) {
+        $f = fopen($root . 'games.csv', 'w');
         fwrite($f, "winner,loser,date\r\n");
         fclose($f);
     }
@@ -16,7 +22,8 @@ function createFiles()
 
 function loadPlayers()
 {
-    return array_filter(explode("\n", file_get_contents('players.txt')));
+    $root = getFileRoot();
+    return array_filter(explode("\n", $root . file_get_contents('players.txt')));
 }
 
 function loadScores($games)
@@ -30,7 +37,8 @@ function loadScores($games)
 
 function loadGames()
 {
-    $csv = str_getcsv(file_get_contents('games.csv'), "\n");
+    $root = getFileRoot();
+    $csv = str_getcsv(file_get_contents($root . 'games.csv'), "\n");
 
     $header = null;
     $games = [];

@@ -1,16 +1,16 @@
 <?php
 
 //Create Files
-if (! file_exists('players.txt')) {
-    $f = fopen("players.txt", "w");
-    fclose($f);
-}
-
-if (! file_exists('games.csv')) {
-    $f = fopen("games.csv", "w");
-    fwrite($f, "winner,loser,date\r\n");
-    fclose($f);
-}
+//if (! file_exists('players.txt')) {
+//    $f = fopen("players.txt", "w");
+//    fclose($f);
+//}
+//
+//if (! file_exists('games.csv')) {
+//    $f = fopen("games.csv", "w");
+//    fwrite($f, "winner,loser,date\r\n");
+//    fclose($f);
+//}
 
 // Load Players
 $winners = [];
@@ -43,6 +43,11 @@ arsort($winners);
 <head>
     <title>Pool</title>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <style>
+        h3 {
+            margin-bottom: 10px
+        }
+    </style>
 </head>
 <body>
 <h1>Pool</h1>

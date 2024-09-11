@@ -17,5 +17,4 @@ if ($winner && $loser && $date) {
     fclose($file);
 }
 
-
 header('Location: /admin.php');

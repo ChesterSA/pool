@@ -1,16 +1,16 @@
 <?php
 
 //Create Files
-//if (! file_exists('players.txt')) {
-//    $f = fopen("players.txt", "w");
-//    fclose($f);
-//}
-//
-//if (! file_exists('games.csv')) {
-//    $f = fopen("games.csv", "w");
-//    fwrite($f, "winner,loser,date\r\n");
-//    fclose($f);
-//}
+if (! file_exists('players.txt')) {
+    $f = fopen("players.txt", "w");
+    fclose($f);
+}
+
+if (! file_exists('games.csv')) {
+    $f = fopen("games.csv", "w");
+    fwrite($f, "winner,loser,date\r\n");
+    fclose($f);
+}
 
 // Load Players
 $winners = [];

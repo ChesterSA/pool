@@ -53,8 +53,8 @@ function calculateElo($winnerRating, $loserRating, $kFactor = 32)
     $expectedWinner = 1 / (1 + pow(10, ($loserRating - $winnerRating) / 400));
     $expectedLoser = 1 / (1 + pow(10, ($winnerRating - $loserRating) / 400));
 
-    $newWinnerRating = $winnerRating + $kFactor * (1 - $expectedWinner);
-    $newLoserRating = $loserRating + $kFactor * (0 - $expectedLoser);
+    $newWinnerRating = round($winnerRating + $kFactor * (1 - $expectedWinner));
+    $newLoserRating = round($loserRating + $kFactor * (0 - $expectedLoser));
 
     return [
         'winner' => $newWinnerRating,

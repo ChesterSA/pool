@@ -14,22 +14,6 @@
 <a href="/index.php">Back to home</a>
 
 <form action="/backend.php" method="POST">
-    <h3>Players</h3>
-    <?php
-    $names = explode("\n", file_get_contents('players.txt'));
-
-    foreach ($names as $name) {
-        echo "<p>$name</p>";
-    }
-    ?>
-    <label>
-        New Player
-        <input type="text" name="player">
-    </label>
-
-    <input type="submit">
-
-    <hr>
 
     <h3>New Game</h3>
     <label>
@@ -44,8 +28,24 @@
 
     <label>
         Date
-        <input type="date" name="date"
-               value="<?php echo date('Y-m-d'); ?>">
+        <input type="date" name="date" value="<?php echo date('Y-m-d'); ?>">
+    </label>
+
+    <input type="submit">
+
+    <hr>
+
+    <h3>Players</h3>
+    <?php
+    $names = explode("\n", file_get_contents('players.txt'));
+
+    foreach ($names as $name) {
+        echo "<p>$name</p>";
+    }
+    ?>
+    <label>
+        New Player
+        <input type="text" name="player">
     </label>
 
     <input type="submit">

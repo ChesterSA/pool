@@ -62,7 +62,10 @@ $games = loadGames();
                         <label for="date">Date</label>
 
                         <input type="datetime-local" id="date" name="date"
-                               value="<?php echo date('Y-m-d H:i'); ?>">
+                               value="<?php
+                               $now = new DateTime("now", new DateTimeZone('Europe/London'));
+                               echo $now->format('Y-m-d H:i');
+                               ?>">
                     </div>
 
                 </div>

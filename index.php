@@ -38,7 +38,11 @@ $players = loadScores($games);
                 $loop = 1;
 
                 foreach ($players as $player => $stats) {
-                    $key = ($loop == 1) ? "&#127942;" : "$loop.";
+                    $key = match ($loop) {
+                        1 => '&#127942;',
+                        8 => '&#127921;',
+                        default => "$loop."
+                    };
                     echo "<tr><td>$key $player</td><td>{$stats['wins']}</td><td>{$stats['losses']}</td><td>{$stats['ratio']}</td><td>{$stats['elo']}</td></tr>";
                     $loop++;
                 }

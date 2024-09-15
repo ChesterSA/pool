@@ -7,7 +7,7 @@ $players = loadScores($games);
 
 ?>
 <head>
-    <title>Techquity Pool Leaguea</title>
+    <title>Techquity Pool League</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <link rel="stylesheet" href="style.css">

@@ -61,7 +61,7 @@ $games = loadGames();
                     <div>
                         <label for="date">Date</label>
 
-                        <input type="date" id="date" name="date"
+                        <input type="datetime-local" id="date" name="date"
                                value="<?php echo date('Y-m-d'); ?>">
                     </div>
 

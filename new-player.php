@@ -25,7 +25,7 @@ $players = loadPlayers();
     <div class="center">
 
         <form action="/backend.php" method="POST">
-            <input type="hidden" name="type" value="player">
+            <input type="hidden" name="type" value="add-player">
 
             <div class="center">
                 <div>
@@ -51,6 +51,30 @@ $players = loadPlayers();
             }
             ?>
         </ul>
+
+        <form action="/backend.php" method="POST">
+            <input type="hidden" name="type" value="delete-player">
+
+            <div class="center">
+                <div>
+                    <label for="del">Delete Player</label>
+
+                    <select id="del" name="del">
+                        <option disabled selected>-</option>
+                        <?php
+                        foreach ($players as $name) {
+                            echo "<option>$name</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+
+            </div>
+            <div class="center">
+                <input type="submit">
+            </div>
+
+        </form>
     </details>
 </div>
 

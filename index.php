@@ -30,6 +30,7 @@ $players = loadScores($games);
                     <th>Player</th>
                     <th>Wins</th>
                     <th>Losses</th>
+                    <th>Ratio</th>
                     <th>Score</th>
                 </tr>
 
@@ -38,7 +39,7 @@ $players = loadScores($games);
 
                 foreach ($players as $player => $stats) {
                     $key = ($loop == 1) ? "&#127942;" : "$loop.";
-                    echo "<tr><td>$key $player</td><td>{$stats['wins']}</td><td>{$stats['losses']}</td><td>{$stats['elo']}</td></tr>";
+                    echo "<tr><td>$key $player</td><td>{$stats['wins']}</td><td>{$stats['losses']}</td><td>{$stats['ratio']}</td><td>{$stats['elo']}</td></tr>";
                     $loop++;
                 }
                 ?>

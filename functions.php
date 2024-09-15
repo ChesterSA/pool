@@ -54,6 +54,9 @@ function loadScores($games)
         if (! isset($player['losses'])) {
             $player['losses'] = 0;
         }
+
+        $l = $player['losses'] ?: 1;
+        $player['ratio'] = $player['wins'] / $l;
     }
 
     array_multisort(array_column($players, 'elo'), SORT_DESC, $players);
@@ -78,6 +81,8 @@ function loadGames()
             $games[] = array_combine($header, $row);
         }
     }
+
+    array_multisort(array_column($games, 'date'), SORT_ASC, $games);
 
     return $games;
 }
@@ -148,4 +153,21 @@ function saveGame($data)
         fwrite($file, $line . "\r\n");
         fclose($file);
     }
+}
+
+function deletePlayer()
+{
+    $player = $_POST['del'];
+    $root = getFileRoot();
+
+    $players = file_get_contents($root . 'players.txt');
+    $updated = str_replace($player, '', $players);
+
+    $filtered = array_filter(explode("\r\n", $updated));
+
+    $imploded = implode("\r\n", $filtered);
+
+    $file = fopen($root . "players.txt", "w");
+    fwrite($file, $imploded);
+    fclose($file);
 }

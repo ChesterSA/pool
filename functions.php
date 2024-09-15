@@ -1,8 +1,10 @@
 <?php
 
-function getFileRoot(){
+function getFileRoot()
+{
     return $_SERVER['REMOTE_ADDR'] == '127.0.0.1' ? '' : '../';
 }
+
 function createFiles()
 {
     $root = getFileRoot();
@@ -31,23 +33,27 @@ function loadScores($games)
 
     $elo = updateEloRatings($games);
 
-    foreach($elo as $player => $score) {
+    foreach ($elo as $player => $score) {
         $players[$player]['elo'] = $score;
     }
 
     $winners = array_count_values(array_column($games, 'winner'));
-    foreach($winners as $winner => $wins) {
+    foreach ($winners as $winner => $wins) {
         $players[$winner]['wins'] = $wins;
     }
 
     $losers = array_count_values(array_column($games, 'loser'));
-    foreach($losers as $loser => $losses) {
+    foreach ($losers as $loser => $losses) {
         $players[$loser]['losses'] = $losses;
     }
 
-    foreach($players as &$player) {
-        if (! isset($player['wins'])) { $player['wins'] = 0; }
-        if (! isset($player['losses'])) { $player['losses'] = 0; }
+    foreach ($players as &$player) {
+        if (! isset($player['wins'])) {
+            $player['wins'] = 0;
+        }
+        if (! isset($player['losses'])) {
+            $player['losses'] = 0;
+        }
     }
 
     array_multisort(array_column($players, 'elo'), SORT_DESC, $players);
@@ -117,7 +123,8 @@ function updateEloRatings($matches)
     return $ratings;
 }
 
-function savePlayer($data) {
+function savePlayer($data)
+{
     $root = getFileRoot();
 
     if (isset($data['player']) && $player = $data['player']) {
@@ -127,7 +134,8 @@ function savePlayer($data) {
     }
 }
 
-function saveGame($data) {
+function saveGame($data)
+{
     $root = getFileRoot();
 
     $winner = $data['winner'];

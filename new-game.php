@@ -32,7 +32,7 @@ $games = loadGames();
 
 <main>
     <div>
-        <form action="/backend.php" method="POST" style="display justify-content: center">
+        <form action="/backend.php" method="POST">
 
             <div style="display: flex; justify-content: center; gap: 1rem">
                 <label for="winner">Winner</label>

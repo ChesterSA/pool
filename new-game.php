@@ -8,7 +8,7 @@ $games = loadGames();
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Admin Panel</title>
+    <title>Add a Game</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -71,9 +71,7 @@ $games = loadGames();
 
             </div>
             <div style="display: flex; justify-content: center;">
-<!--                <label>-->
-                <input type="submit" id="submit" aria-label="Submit" title="Submit">
-<!--                </label>-->
+                <input type="submit" id="submit">
             </div>
         </form>
     </div>

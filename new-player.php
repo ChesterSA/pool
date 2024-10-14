@@ -9,7 +9,7 @@ $players = loadPlayers();
 <head>
     <title>Admin Panel</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <style>
@@ -30,7 +30,7 @@ $players = loadPlayers();
 </header>
 
 <main>
-    <section>
+    <div>
         <form action="/backend.php" method="POST">
             <input type="hidden" name="type" value="add-player">
 
@@ -47,8 +47,8 @@ $players = loadPlayers();
             </div>
 
         </form>
-    </section>
-    <section>
+    </div>
+    <div>
         <details open>
             <summary>Players</summary>
             <ul>
@@ -83,11 +83,11 @@ $players = loadPlayers();
 
             </form>
         </details>
-    </section>
+    </div>
 </main>
 
 <footer>
-    <p>Made with <3 by Chester</p>
+    <p>Made with &lt;3 by Chester</p>
 </footer>
 
 </body>

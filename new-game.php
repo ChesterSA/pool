@@ -10,7 +10,7 @@ $games = loadGames();
 <head>
     <title>Admin Panel</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <style>
@@ -31,7 +31,7 @@ $games = loadGames();
 </header>
 
 <main>
-    <section>
+    <div>
         <form action="/backend.php" method="POST" style="display justify-content: center">
 
             <div style="display: flex; justify-content: center; gap: 1rem">
@@ -74,8 +74,8 @@ $games = loadGames();
                 <input type="submit">
             </div>
         </form>
-    </section>
-    <section>
+    </div>
+    <div>
         <details open>
             <summary>Games</summary>
             <table>
@@ -96,11 +96,11 @@ $games = loadGames();
                 ?>
             </table>
         </details>
-    </section>
+    </div>
 </main>
 
 <footer>
-    <p>Made with <3 by Chester</p>
+    <p>Made with &lt;3 by Chester</p>
 </footer>
 
 </body>

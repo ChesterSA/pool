@@ -71,7 +71,8 @@ $games = loadGames();
 
             </div>
             <div style="display: flex; justify-content: center;">
-                <input type="submit">
+                <input type="submit" id="submit">
+                <label for="submit" style="display:none">Submit Form</label>
             </div>
         </form>
     </div>

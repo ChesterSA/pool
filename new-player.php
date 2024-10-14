@@ -4,30 +4,37 @@ include('functions.php');
 $players = loadPlayers();
 
 ?>
-
+<!doctype html>
+<html lang="en">
 <head>
     <title>Admin Panel</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --accent: #8ECAD2;
+        }
+    </style>
 </head>
 
 <body>
 <header>
-    <h1>Add a Player</h1>
-
+    <h1>Add A Player</h1>
     <nav>
-        <a href="/index.php">Back to home</a>
+        <a href="index.php">Home</a>
+        <a href="new-player.php">Add a Player</a>
+        <a href="new-game.php">Add a Game</a>
     </nav>
 </header>
 
-<div class="container">
-    <div class="center">
-
+<main>
+    <section>
         <form action="/backend.php" method="POST">
             <input type="hidden" name="type" value="add-player">
 
-            <div class="center">
+            <div style="display: flex; justify-content: center; gap: 1rem">
                 <div>
                     <label for="player">Player</label>
 
@@ -35,48 +42,53 @@ $players = loadPlayers();
                 </div>
 
             </div>
-            <div class="center">
+            <div style="display: flex; justify-content: center; gap: 1rem">
                 <input type="submit">
             </div>
 
         </form>
+    </section>
+    <section>
+        <details open>
+            <summary>Players</summary>
+            <ul>
+                <?php
+                foreach ($players as $player) {
+                    echo "<li>$player</li>";
+                }
+                ?>
+            </ul>
 
-    </div>
-    <details open>
-        <summary>Players</summary>
-        <ul>
-            <?php
-            foreach ($players as $player) {
-                echo "<li>$player</li>";
-            }
-            ?>
-        </ul>
+            <form action="/backend.php" method="POST">
+                <input type="hidden" name="type" value="delete-player">
 
-        <form action="/backend.php" method="POST">
-            <input type="hidden" name="type" value="delete-player">
+                <div style="display: flex; justify-content: center; gap: 1rem">
+                    <div>
+                        <label for="del">Delete Player</label>
 
-            <div class="center">
-                <div>
-                    <label for="del">Delete Player</label>
+                        <select id="del" name="del" style="min-width: 20rem">
+                            <option disabled selected>-</option>
+                            <?php
+                            foreach ($players as $name) {
+                                echo "<option>$name</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
 
-                    <select id="del" name="del">
-                        <option disabled selected>-</option>
-                        <?php
-                        foreach ($players as $name) {
-                            echo "<option>$name</option>";
-                        }
-                        ?>
-                    </select>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 1rem">
+                    <input type="submit">
                 </div>
 
-            </div>
-            <div class="center">
-                <input type="submit">
-            </div>
+            </form>
+        </details>
+    </section>
+</main>
 
-        </form>
-    </details>
-</div>
-
+<footer>
+    <p>Made with <3 by Chester</p>
+</footer>
 
 </body>
+</html>

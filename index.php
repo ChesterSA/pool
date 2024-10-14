@@ -11,7 +11,7 @@ $players = loadScores($games);
 <head>
     <title>Techquity Pool League</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <style>
@@ -32,7 +32,7 @@ $players = loadScores($games);
 </header>
 
 <main>
-    <section style="display: flex; justify-content: center;">
+    <div style="display: flex; justify-content: center;">
         <table>
             <tr>
                 <th>Player</th>
@@ -56,8 +56,8 @@ $players = loadScores($games);
             }
             ?>
         </table>
-    </section>
-    <section>
+    </div>
+    <div>
         <details>
             <summary>Games</summary>
             <table>
@@ -78,11 +78,11 @@ $players = loadScores($games);
                 ?>
             </table>
         </details>
-    </section>
+    </div>
 
 </main>
 <footer>
-    <p>Made with <3 by Chester</p>
+    <p>Made with &lt;3 by Chester</p>
 </footer>
 
 </body>

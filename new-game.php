@@ -72,7 +72,7 @@ $games = loadGames();
             </div>
             <div style="display: flex; justify-content: center;">
 <!--                <label>-->
-                <input type="submit" id="submit" aria-label="Submit">
+                <input type="submit" id="submit" aria-label="Submit" title="Submit">
 <!--                </label>-->
             </div>
         </form>

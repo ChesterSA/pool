@@ -11,5 +11,7 @@ if ($_POST['type'] == 'add-player') {
 } elseif ($_POST['type'] == 'game') {
     saveGame($_POST);
     header('Location: /new-game.php');
+} elseif ($_POST['type'] == 'league') {
+    header('Location: /test.php');
 }
 

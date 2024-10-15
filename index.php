@@ -28,6 +28,7 @@ $players = loadScores($games);
         <a href="index.php">Home</a>
         <a href="new-player.php">Add a Player</a>
         <a href="new-game.php">Add a Game</a>
+        <a href="leagues/index.php">Leagues</a>
     </nav>
 </header>
 

@@ -49,7 +49,7 @@ arsort($winners);
 <body>
 
 <header>
-    <h1>Techquity Pool League</h1>
+    <h1>Pool League</h1>
     <nav>
         <a href="index.php">Home</a>
         <a href="admin.php">Admin</a>

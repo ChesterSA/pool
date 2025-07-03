@@ -2,16 +2,17 @@
     <title>Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <style>
-        :root {
-            --accent: #8ECAD2;
-        }
-    </style>
 </head>
 <body>
-<h1>Admin Panel</h1>
 
-<a href="/index.php">Back to home</a>
+<header>
+    <h1>Pool League</h1>
+    <nav>
+        <a href="index.php">Home</a>
+        <a href="admin.php">Admin</a>
+    </nav>
+</header>
+
 
 <form action="/backend.php" method="POST">
     <h3>Players</h3>

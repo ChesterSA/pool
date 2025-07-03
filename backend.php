@@ -1,15 +1,20 @@
 <?php
 
-include('functions.php');
-
-if ($_POST['type'] == 'add-player') {
-    savePlayer($_POST);
-    header('Location: /new-player.php');
-} elseif ($_POST['type'] == 'delete-player') {
-    deletePlayer();
-    header('Location: /new-player.php');
-} elseif ($_POST['type'] == 'game') {
-    saveGame($_POST);
-    header('Location: /new-game.php');
+if (isset($_POST['player']) && $player = $_POST['player']) {
+    $file = fopen("players.txt", "a");
+    fwrite($file, $player . "\r\n");
+    fclose($file);
 }
 
+$winner = $_POST['winner'];
+$loser = $_POST['loser'];
+$date = $_POST['date'];
+
+if ($winner && $loser && $date) {
+    $file = fopen("games.csv", "a");
+    $line = "$winner,$loser,$date";
+    fwrite($file, $line . "\r\n");
+    fclose($file);
+}
+
+header('Location: /admin.php');
